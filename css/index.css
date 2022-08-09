@@ -1,0 +1,352 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #666;}
+body{font-size: 16px; color: #666; line-height: 120%; font-family: "font_ns",sans-serif;}
+
+.header{
+    width: 100%; height: 164px; 
+    border-top: 5px solid #009223; border-bottom: 1px solid #ddd;
+}
+.header .header-wrap{
+    width: 1170px; height: 100%; margin: 0 auto;
+    position: relative;
+    /* 여기 이게 있는 이유는 기준이 wrap이라서 */
+}
+.header .logo{text-align: center; margin-top: 35px;}
+.header .etc-menu{
+    position: absolute; right: 25px; top: 5px;
+}
+.header .etc-menu ul{overflow: hidden;}
+.header .etc-menu ul li{float: left; position: relative;}
+.header .etc-menu ul li a{display: inline-block; height: 30px; line-height: 30px; font-size: 13px; font-weight: normal;}
+.header .etc-menu ul li:nth-child(2){margin-left: 30px;}
+/* 공간과 공간사이를 띄움 */
+.header .etc-menu ul li:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    width: 3px; height: 3px; background-color: #ddd; top: 50%; left: -16px; margin-top: -2px;
+}
+.header .etc-menu ul li:nth-child(3) a{
+    font-size: 0; width: 30px; height: 30px; background-image: url(../images/icon_utill_global.png);
+    margin-left: 15px; vertical-align: middle;
+}
+.header .nav{
+    width: 100%; margin-top: 12px;
+}
+.header .nav ul{width: 990px; margin: 0 auto; overflow: hidden;}
+.header .nav ul li{
+    float: left; width: 165px; height: 77px; line-height: 77px; text-align: center;}
+.header .nav ul li a{
+    display: inline-block; width: 100%; font-weight: bold; color: #292929; letter-spacing: -0.03em; font-size: 18px;
+}
+.header .nav ul li.on a{color: #009223;}
+
+.header .submenu{
+    width: 100%; position: relative; top: -34px; background-color: #fff; transition: 0.2s; 
+    height: 0; overflow: hidden; z-index: 9;
+}
+.header .submenu.on{height: 260px;}
+.header .submenu .submenu-wrap{width: 990px; margin: 0 auto;}
+.header .submenu ul{float: left; width: 165px; text-align: center; padding-top: 20px;}
+.header .submenu ul li{
+    width: 100%; height: 35px; line-height: 120%; transition: 0.2s; 
+    opacity: 0;
+}
+.header .submenu ul li a{
+    padding: 8px 0 9px; display: inline-block; width: 100%; letter-spacing: 0.05em;
+    font-size: 15px;}
+.header .submenu ul li a:hover{color: #009223; text-decoration: underline;}
+.header .submenu ul li.on{opacity: 1;}
+
+
+.slide-section{width: 100%; overflow: hidden; position: relative;}
+.slide-section > ul li{float: left; width: calc(100%/8); position: relative; height: 440px; font-size: 0;}
+/* calc 계산기(자동계산) */
+.slide-section > ul li img{width: 100%; height: 440px;}
+.slide-section .indicator{position: absolute; right: 365px; bottom: 50px;}
+.slide-section .indicator ul li{float: left; margin: 0 5px;}
+.slide-section .indicator ul li a{
+    display: block; width: 10px; height: 10px; background-color: #fff; 
+    border-radius: 30px; font-size: 0;}
+.slide-section .indicator ul li a.on{width: 30px; background-color: #ffc300; transition: 0.5s;}
+
+
+.quick-menu{width: 1170px; margin: 0 auto; margin-top: -30px; position: relative; z-index: 9;}
+.quick-menu ul{float: right;}
+.quick-menu ul li{
+    float: left; width: 300px; height: 80px; text-align: center;
+}
+.quick-menu ul li:nth-child(1){background-color: #ffc232; border-radius: 30px 0 0 0; letter-spacing: -0.02em;}
+.quick-menu ul li:nth-child(2){background-color: #009223; border-radius: 0 0 30px 0; letter-spacing: -0.06em;}
+.quick-menu ul li a{
+    font-size: 22px; padding-top: 27px; display: inline-block; width: 100%; font-weight: bold;
+}
+.quick-menu ul li:nth-child(1) a{color: #292929;}
+.quick-menu ul li:nth-child(1) a::before{content: ""; width: 24px; height: 30px; background-image: url(../images/icon_map.png); display: inline-block; vertical-align: middle; margin-right: 13px; position: relative; top: -2px;}
+.quick-menu ul li:nth-child(2) a{color: #fff;}
+.quick-menu ul li:nth-child(2) a::before{content: ""; width: 34px; height: 30px; background-image: url(../images/icon_franchise.png); display: inline-block; vertical-align: middle; margin-right: 13px; position: relative; top: -2px;}
+
+
+.subway-menu{
+    margin-top: 80px; background-color: #fff; width: 100%; height: 560px; padding-bottom: 60px;
+}
+.subway-menu .menu-list{
+    width: 1170px; margin: 0 auto; overflow: hidden; padding-top: 60px; padding-bottom: 33px;
+}
+.subway-menu .menu-list h3{
+    float: left; color: #292929; font-size: 40px; font-family: "font_sw",serif; 
+    height: 60px; padding-top: 32px; padding-left: 25px; margin-bottom: 1px;
+    background: url("../images/bul_tit.png") 0 12px no-repeat;
+}
+.subway-menu .menu-list ul{
+    float: right; margin-right: 44px; margin-top: 44px;
+}
+.subway-menu .menu-list ul li{
+    float: left; padding-left: 25px; margin-left: 24px; font-weight: 300; position: relative;
+}
+.subway-menu .menu-list ul li:not(:nth-child(1))::after{
+    content: ""; position: absolute; width: 1px; height: 15px; background-color: #ddd; left: 0; top: 3px;
+}
+.subway-menu .menu-list ul li a{
+    display: inline-block; width: 100%; font-size: 16px; letter-spacing: -0.03em;
+}
+.subway-menu .menu-list ul li.on a{
+    color: #009223; font-weight: bold;
+}
+
+.subway-menu .menu-content{
+    position: absolute; width: 100%; height: 320px; 
+    overflow: hidden;
+}
+.subway-menu .menu-content .menu-content-wrap{
+    width: 1200px; height: 100%;
+    display: none;
+    position: absolute; 
+    /* position: absolute; 는 margin: 0 auto; 가 안먹기 때문에 아래 속성 써줘야 컨텐츠가 중간으로 간다 */
+    left: 50%; transform: translateX(-50%);
+}
+.subway-menu .menu-content .menu-content-wrap:nth-child(1){
+    display: block;
+}
+.subway-menu .menu-content .menu-wrap{
+    width: 100%; height: 100%; margin-top: -15px; 
+    overflow: hidden;
+}
+.subway-menu .menu-content .menu-area{
+    width: 200%; position: relative; 
+}
+.subway-menu .menu-content .menu-box{
+    float: left; width: 260px; height: 320px;
+    margin-left: 30px; padding: 0 5px; cursor: pointer; text-align: center;
+    position: relative;
+}
+.subway-menu .menu-content .menu-box::after{
+    content: "";
+    width: 98px; height: 98px; position: absolute; background: url("../images/btn_more.png") 0 0 no-repeat;
+    left: 50%; top: 50%; margin: -22px 0 0 -42px; opacity: 0;
+}
+.subway-menu .menu-content .menu-box:hover::after{opacity: 1;}
+.subway-menu .menu-content .menu-box img{width: 100%; height: 182px;}
+.subway-menu .menu-content .menu-box:hover img{width: 340px; height: 238px;}
+.subway-menu .menu-content .menu-box:hover p{display: none;}
+.subway-menu .menu-content .menu-box:hover h3{font-size: 22px; margin-top: 10px;}
+.subway-menu .menu-content .menu-box h3{
+    color: #292929; font-size: 18px;
+    margin-top: 3px; margin-bottom: 10px;
+}
+.subway-menu .menu-content .menu-box p{
+    color: #999; font-size: 13px; letter-spacing: -0.04em; line-height: 21px;
+}
+.subway-menu .menu-content .arrow a{
+    font-size: 0; position: absolute; width: 50px; height: 50px; overflow: hidden;
+    top: 113px; background: url("../images/icon_event_slider_arr.png") 0 0 no-repeat;
+}
+.subway-menu .menu-content .arrow a:nth-child(1){left: -202px;}
+.subway-menu .menu-content .arrow a:nth-child(1):hover{background-position-y: 100%;}
+.subway-menu .menu-content .arrow a:nth-child(2){right: -201px; background-position: 100% 0;}
+.subway-menu .menu-content .arrow a:nth-child(2):hover{background-position-y: 100%;}
+
+.content{
+    width: 100%; background: url("../images/bg_content.gif") 0 -30px;
+}
+.content .content-wrap{
+    width: 1280px; margin: 0 auto; padding: 80px 0; overflow: hidden;
+}
+.content .content-top{width: 100%; height: 300px;}
+.content .content-top .content-amused{
+    float: left; width: 400px; height: 300px; margin-left: 55px; 
+    background-image: url("../images/bg_utilization.png");
+}
+.content .content-top .content-amused h3{
+    color: #fff; margin-left: 39px; font-size: 28px; line-height: 40px; letter-spacing: -0.02em;
+}
+.content .content-top .content-amused h3:nth-child(1){
+    margin: 38px 0 0 39px; letter-spacing: -0.03em;
+}
+.content .content-top .content-amused a{
+    display: inline-block; margin: 100px 0 0 41px; width: 92px; height: 36px; line-height: 36px;
+    border: 2px solid #fff; border-radius: 20px; 
+    color:#fff; font-weight: 300; text-align: center;  
+}
+.content .content-top .content-history{
+    float: left; width: 825px; height: 300px;
+    background-image: url("../images/img_subway_history.png");
+}
+.content .content-top .content-history h3{
+    color: #fff; margin-left: 410px; font-size: 28px; line-height: 40px; letter-spacing: -0.02em;
+}
+.content .content-top .content-history h3:nth-child(1){
+    margin-top: 38px;
+}
+.content .content-top .content-history a{
+    display: inline-block; margin: 100px 0 0 410px; width: 128px; height: 36px; line-height: 36px;
+    border: 2px solid #fff; border-radius: 20px; 
+    color:#fff; font-weight: 300; text-align: center; 
+}
+.content .content-bottom{width: 100%; height: 300px; margin: 30px 0 0 55px;}
+.content .content-bottom .content-notice{
+    width: 870px; height: 300px; background-color: #fff; float: left;
+    border-radius: 30px 0 30px 0;
+}
+.content .content-bottom .content-notice .title{float: left; margin: 75px 0 0 60px;}
+.content .content-bottom .content-notice .title h3{
+    color: #292929; font-size: 30px; font-family: "font_sw",serif; 
+    height: 60px; padding-top: 26px; padding-left: 25px; margin-bottom: 1px;
+    background: url("../images/bul_tit.png") 0 0 no-repeat;
+}
+.content .content-bottom .content-notice .title p{
+    margin-top: -9px; text-align: center; line-height: 26px; letter-spacing: -0.03em;
+}
+.content .content-bottom .content-notice .title p:nth-child(3){line-height: 44px;}
+
+.content .content-bottom .content-notice .text{float: left; width: 50%; margin: 76px 0 0 133.5px;}
+.content .content-bottom .content-notice .text ul li:not(:nth-child(1)){margin-top: 21px;}
+.content .content-bottom .content-notice .text ul li a{
+    color: #292929; font-size: 16px; letter-spacing: -0.03em; 
+    display: inline-block; position: relative;
+}
+.content .content-bottom .content-notice .text ul li a::after{
+    content: "";
+    width: 0%; height: 1px; background-color: #009223;
+    position: absolute; left: 0; bottom: 0; transition: 0.2s;
+}
+.content .content-bottom .content-notice .text ul li a:hover{
+    color: #009223; 
+}
+.content .content-bottom .content-notice .text ul li a:hover::after{width: 100%;}
+.content .content-bottom .content-notice .text > a{
+    display: inline-block; color: #999; font-size: 14px; margin: 32px 0 7px;
+}
+
+.content .content-bottom .content-slide{
+    width: 270px; height: 300px; background-color: #fff; float: left; 
+    margin-left: 30px; border-radius: 0 30px 0 30px;
+    position: relative;  overflow: hidden;
+}
+.content .content-bottom .content-slide > ul{width: 300%;}
+.content .content-bottom .content-slide > ul li{float: left;}
+.content .content-bottom .content-slide .indicator{
+    position: absolute; right: 20px; top: 20px;
+}
+.content .content-bottom .content-slide .indicator ul li{
+    font-size: 0; width: 10px; height: 10px; 
+    display: inline-block; background-color: #fff;
+    border-radius: 30px; margin: 0 5px;
+    transition: 0.3s;
+}
+.content .content-bottom .content-slide .indicator ul li.on{
+    width: 30px; background-color: #ffc300;
+}
+
+.footer-menu{
+    text-align: center; width: 100%; padding: 40px 0;
+}
+.footer-menu .menu-wrap{
+    width: 1035.97px; height: 70px; margin: 0 auto;
+}
+.footer-menu ul{overflow: hidden; height: 100%;}
+.footer-menu ul li{float: left; margin-left: 80px; padding-left: 90px; height: 100%; position: relative;}
+.footer-menu ul li:nth-child(1){margin-left: 0; width: 125.23px;}
+.footer-menu ul li:nth-child(2){width: 113.53px;}
+.footer-menu ul li:nth-child(3){width: 78.09px;}
+.footer-menu ul li:nth-child(4){width: 119.11px;}
+.footer-menu ul li .icon{
+    background: url("../images/icon_quickmenu.png") 0 0 no-repeat;
+    width: 70px; height: 70px; position: absolute; left: 0; top: 0;
+}
+.footer-menu ul li:nth-child(2) .icon{
+    background-position-x: -70px;
+}
+.footer-menu ul li:nth-child(3) .icon{
+    background-position-x: -140px;
+}
+.footer-menu ul li:nth-child(4) .icon{
+    background-position-x: -210px;
+}
+.footer-menu ul li p{
+    font-weight: bold; color: #292929; font-size: 18px; text-align: left; letter-spacing: -0.72px;
+    margin-top: 12px; margin-bottom: 6px;
+}
+.footer-menu ul li span{
+    color: #999; font-size: 13px; text-align: left; display: block;
+    font-weight: normal; letter-spacing: -0.26px;
+}
+
+.footer{
+    background-color: #292929;
+    padding: 22px 0; color: #666;
+    position: relative;
+}
+.footer::after{
+    content: "";
+    position: absolute; top: 59px;
+    width: 100%; height: 1px; 
+    background-color: #3b3b3b;
+}
+.footer .footer-wrap{width: 1170px; margin: 0 auto; position: relative;}
+.footer .footer-top{margin-bottom: 25px;}
+.footer .footer-top ul{overflow: hidden;}
+.footer .footer-top ul li{
+    float: left; margin-right: 29px; height: 18px; top: -2px; position: relative;
+}
+.footer .footer-top ul li a{
+    color: #666; display: block; 
+    font-size: 14px; letter-spacing: -0.05em; height: 18px;
+}
+.footer .footer-top ul li:nth-child(2) a{font-weight: bold; color: #bbb;}
+.footer .footer-top ul li:nth-child(5) a{letter-spacing: 0.055em;}
+.footer .footer-bottom span{
+    font-size: 13px; display: inline-block; 
+    margin-top: 19px; margin-left: 3px; padding-left: 9px;
+    letter-spacing: 0; position: relative;
+}
+.footer .footer-bottom span:not(:nth-child(1))::after{
+    content: ""; 
+    position: absolute; width: 2px; height: 10px; 
+    background-color: #666; left: 0; top: 5px;
+}
+.footer .footer-bottom span:nth-child(1){
+    margin-left: 0; padding-left: 0;
+}
+.footer .footer-bottom p{
+    font-size: 13px; padding-top: 2px; line-height: 25px; letter-spacing: 0.005em; font-family: "font_sw",serif;
+}
+.footer .sns-link{
+    position: absolute; right: -10px; top: 53px; width: 165px; height: 50px;
+}
+.footer .sns-link ul li{
+    position: absolute; font-size: 0; width: 50px; height: 50px;
+    overflow: hidden; line-height: 0; bottom: 0;
+}
+.footer .sns-link ul li::after{
+    content: "";
+    width: 50px; height: 50px;
+    display: block; transition: 0.3s; opacity: 0;
+}
+.footer .sns-link ul li:nth-child(1){background: url("../images/icon_sns_instar.png");}
+.footer .sns-link ul li:nth-child(1)::after{background: url("../images/icon_sns_instar.png")100% 0;}
+.footer .sns-link ul li:nth-child(1):hover::after{opacity: 1;}
+.footer .sns-link ul li:nth-child(2){background: url("../images/icon_sns_facebook.png"); left: 65px;}
+.footer .sns-link ul li:nth-child(2)::after{background: url("../images/icon_sns_facebook.png")100% 0;}
+.footer .sns-link ul li:nth-child(2):hover::after{opacity: 1;}
